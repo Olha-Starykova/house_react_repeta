@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/house_react_repeta/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/house_react_repeta/static/js/main.b02d2e47.chunk.js",
+    "main.js.map": "/house_react_repeta/static/js/main.b02d2e47.chunk.js.map",
+    "runtime-main.js": "/house_react_repeta/static/js/runtime-main.5708fc85.js",
+    "runtime-main.js.map": "/house_react_repeta/static/js/runtime-main.5708fc85.js.map",
+    "static/js/2.07114f2d.chunk.js": "/house_react_repeta/static/js/2.07114f2d.chunk.js",
+    "static/js/2.07114f2d.chunk.js.map": "/house_react_repeta/static/js/2.07114f2d.chunk.js.map",
+    "static/js/3.45096917.chunk.js": "/house_react_repeta/static/js/3.45096917.chunk.js",
+    "static/js/3.45096917.chunk.js.map": "/house_react_repeta/static/js/3.45096917.chunk.js.map",
+    "index.html": "/house_react_repeta/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/house_react_repeta/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.07114f2d.chunk.js.LICENSE.txt": "/house_react_repeta/static/js/2.07114f2d.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/house_react_repeta/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5708fc85.js",
+    "static/js/2.07114f2d.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.b02d2e47.chunk.js"
+  ]
+}
