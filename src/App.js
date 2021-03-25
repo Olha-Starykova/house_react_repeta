@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
  //import Counter from './components/Counter/Counter';
 // import Dropdown from './components/Counter/Dropdown';
- import ColorPicker from './components/Counter/ColorPicker';
-// import TodoList from './components/TodoList';
-// import initialTodos from './todos.json';
+// import ColorPicker from './components/Counter/ColorPicker';
+ import TodoList from './components/TodoList';
+import initialTodos from './todos.json';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -14,54 +14,57 @@ const colorPickerOptions = [
   { label: 'indigo', color: '#3F51B5' },
 ];
 
-const App = () => (
-  <>
-    <h1>Состояние компонента</h1>
+// const App = () => (
+//   <>
+//     <h1>Состояние компонента</h1>
 
-    {/* <Counter  initialValue={10}/> */}
-    {/* <Dropdown /> */}
-    <ColorPicker options={colorPickerOptions} />
-  </>
-);
+//     {/* <Counter  initialValue={10}/> */}
+//     {/* <Dropdown /> */}
+//     {/* <ColorPicker options={colorPickerOptions} /> */}
 
 
-// class App extends Component {
-//   state = {
-//     todos: initialTodos,
-//   };
+//   </>
+// );
 
-//   deleteTodo = todoId => {
-//     this.setState(prevState => ({
-//       todos: prevState.todos.filter(todo => todo.id !== todoId),
-//     }));
-//   };
 
-//   render() {
-//     const { todos } = this.state;
+class App extends Component {
+  state = {
+    //храним массив
+    todos: initialTodos,
+  };
+//метод для удаления по id/ работа с коллекцией выкидываем елемент id которого совпадает
+  deleteTodo = todoId => {
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(todo => todo.id !== todoId),
+    }));
+  };
 
-//     const totalTodoCount = todos.length;
-//     const completedTodoCount = todos.reduce(
-//       (total, todo) => (todo.completed ? total + 1 : total),
-//       0,
-//     );
+  render() {
+    const { todos } = this.state;
 
-//     return (
-//       <>
-//         <h1>Состояние компонента</h1>
+    const totalTodoCount = todos.length;
+    const completedTodoCount = todos.reduce(
+      (total, todo) => (todo.completed ? total + 1 : total),
+      0,
+    );
 
-//         {/* <Counter initialValue={10} /> */}
-//         {/* <Dropdown /> */}
-//         {/* <ColorPicker options={colorPickerOptions} /> */}
+    return (
+      <>
+        <h1>Состояние компонента</h1>
 
-//         <div>
-//           <p>Общее кол-во: {totalTodoCount}</p>
-//           <p>Кол-во выполненных: {completedTodoCount}</p>
-//         </div>
+        {/* <Counter initialValue={10} /> */}
+        {/* <Dropdown /> */}
+        {/* <ColorPicker options={colorPickerOptions} /> */}
 
-//         <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
-//       </>
-//     );
-//   }
-// }
+        <div>
+          <p>Общее кол-во: {totalTodoCount}</p>
+          <p>Кол-во выполненных: {completedTodoCount}</p>
+        </div>
+//передаем пропсы для удаления от родителей к детям
+        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
+      </>
+    );
+  }
+}
 
-export default App;
+export default App; 
