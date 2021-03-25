@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.js": "/house_react_repeta/static/js/main.c2fd2762.chunk.js",
-    "main.js.map": "/house_react_repeta/static/js/main.c2fd2762.chunk.js.map",
+    "main.css": "/house_react_repeta/static/css/main.fef8f6ca.chunk.css",
+    "main.js": "/house_react_repeta/static/js/main.153c47ed.chunk.js",
+    "main.js.map": "/house_react_repeta/static/js/main.153c47ed.chunk.js.map",
     "runtime-main.js": "/house_react_repeta/static/js/runtime-main.07124c16.js",
     "runtime-main.js.map": "/house_react_repeta/static/js/runtime-main.07124c16.js.map",
-    "static/js/2.ecba3894.chunk.js": "/house_react_repeta/static/js/2.ecba3894.chunk.js",
-    "static/js/2.ecba3894.chunk.js.map": "/house_react_repeta/static/js/2.ecba3894.chunk.js.map",
+    "static/js/2.e46ae3ec.chunk.js": "/house_react_repeta/static/js/2.e46ae3ec.chunk.js",
+    "static/js/2.e46ae3ec.chunk.js.map": "/house_react_repeta/static/js/2.e46ae3ec.chunk.js.map",
     "index.html": "/house_react_repeta/index.html",
-    "static/js/2.ecba3894.chunk.js.LICENSE.txt": "/house_react_repeta/static/js/2.ecba3894.chunk.js.LICENSE.txt"
+    "static/css/main.fef8f6ca.chunk.css.map": "/house_react_repeta/static/css/main.fef8f6ca.chunk.css.map",
+    "static/js/2.e46ae3ec.chunk.js.LICENSE.txt": "/house_react_repeta/static/js/2.e46ae3ec.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.07124c16.js",
-    "static/js/2.ecba3894.chunk.js",
-    "static/js/main.c2fd2762.chunk.js"
+    "static/js/2.e46ae3ec.chunk.js",
+    "static/css/main.fef8f6ca.chunk.css",
+    "static/js/main.153c47ed.chunk.js"
   ]
 }
