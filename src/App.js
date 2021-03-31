@@ -8,7 +8,8 @@ import Form from './components/Form';
 import initialTodos from './todos.json';
 import TodoEditor from './components/TodoEditor/TodoEditor'
 import shortid from 'shortid';
- import Filter from './components/Filter'
+import Filter from './components/Filter'
+ import Modal from './components/Modal'
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -24,8 +25,15 @@ class App extends Component {
     //храним массив
     todos: initialTodos,
        // inputValue: "123"
-    filter: ''
+    filter: '',
+    showModal: false
   };
+
+  toggleModal = () => {
+    this.setState(state => ({
+      showModal: !state.showModal
+    }));
+  }
   //во время сабмита получить данные текст, для єтого передаем как
   //проп для формы TodoEditor, назовем онсабмит и во время сабмита мы это вызовем
   //как this.props.onSubmit(this.state.message)
@@ -108,8 +116,38 @@ class App extends Component {
   };
 
 
+  componentDidMount() {
+     console.log('App componentDidMount');
+
+    const todos = localStorage.getItem('todos');
+    const parsedTodos = JSON.parse(todos);
+//переписать поверх
+    if (parsedTodos) {
+      this.setState({ todos: parsedTodos });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+     console.log('App componentDidUpdate');
+//старый массив
+    console.log(prevState);
+    //новый массив
+    console.log(this.state)
+    const nextTodos = this.state.todos;
+    const prevTodos = prevState.todos;
+
+    if (nextTodos !== prevTodos) {
+      console.log('Обновилось поле todos, записываю todos в хранилище');
+      localStorage.setItem('todos', JSON.stringify(nextTodos));
+    }
+
+    // if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
+    //   this.toggleModal();
+    // }
+  }
+
   render() {
-    const { todos, filter } = this.state;
+    const { todos, filter, showModal } = this.state;
     const totalTodoCount = todos.length;
     const completedTodoCount = this.calculateCompletedTodos();
     // const completedTodoCount = todos.reduce(
@@ -130,7 +168,7 @@ class App extends Component {
         {/* это не метод onSubmit просто так назвали проп для финальных данных  */}
         <Form onSubmit={this.formSubmitHandler} />
         {/* у второго компонента Form будут другие id */}
-        {/* <Form onSubmit={this.formSubmitHandler} /> */}
+        <Form onSubmit={this.formSubmitHandler} />
         <TodoEditor onSubmit={this.addTodo} />
         {/* фильрация */}
         {/* <label>
@@ -141,7 +179,7 @@ class App extends Component {
         </label> */}
             <Filter value={filter} onChange={this.changeFilter} />
 
-        <h1>Состояние компонента</h1>
+        {/* <h1>Состояние компонента</h1> */}
 
         {/* <Counter initialValue={10} /> */}
         {/* <Dropdown /> */}
@@ -156,8 +194,15 @@ class App extends Component {
           // todos={todos}
           todos={visibleTodos}
           onDeleteTodo={this.deleteTodo}
-          onToggleCompleted={this.toggleCompleted}
+          onToggleCompleted={this.toggleCompleted} 
         />
+        
+        <button type="button" onClick={this.toggleModal}> открыть модальное окно </button>
+        //this.props.onClose передаем
+        {showModal && <Modal  onClose={this.toggleModal}>
+          <p>Привет это children</p>
+             <button type="button" onClick={this.toggleModal}> закрыть модальное окно </button>
+        </Modal>}
       </>
     );
   }
