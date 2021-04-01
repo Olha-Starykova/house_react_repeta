@@ -9,7 +9,8 @@ import initialTodos from './todos.json';
 import TodoEditor from './components/TodoEditor/TodoEditor'
 import shortid from 'shortid';
 import Filter from './components/Filter'
- import Modal from './components/Modal'
+import Modal from './components/Modal'
+ import ArticlesView from './views/ArticlesView';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -162,7 +163,7 @@ class App extends Component {
    
     return (
       <>
-          
+          <ArticlesView />
         {/* <Container></Container> */}
         {/* <input type="text" value={this.state.inputValue} onChange={this.hendelInputChange }/> */}
         {/* это не метод onSubmit просто так назвали проп для финальных данных  */}
@@ -208,4 +209,11 @@ class App extends Component {
   }
 }
 
-export default App; 
+export default App;
+
+
+
+
+
+// 20314649-0be4b13706b99da5b0e7a5a44
+// https://pixabay.com/api/?q=что_искать&page=номер_страницы&key=твой_ключ&image_type=photo&orientation=horizontal&per_page=12
